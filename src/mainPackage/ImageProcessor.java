@@ -10,7 +10,7 @@ public class ImageProcessor {
 	public static void main(String[] args) {
 		// String colour = getColor(IMAGE_PATH);
 		// System.out.println(colour + "\n");
-		DryImage.blackenize("yellow", START_IMAGE_WIDTH, END_IMAGE_WIDTH, START_IMAGE_HEIGHT, END_IMAGE_HEIGHT);
+		WordExtractor.blackenize("yellow", START_IMAGE_WIDTH, END_IMAGE_WIDTH, START_IMAGE_HEIGHT, END_IMAGE_HEIGHT);
 
 		Image imgR = new Image("images/red_black.jpg");
 		Image imgB = new Image("images/blue_black.jpg");
@@ -82,27 +82,27 @@ public class ImageProcessor {
 		return colour;
 	}
 
-	public static String getName(String path) { // this method returns the word that is displayed on the screen
-		String name = null;
-		Image image = new Image(path);
-
-		if (countWhitePixels(image) < 3600)
-			name = "ORANGE";
-		if (countWhitePixels(image) < 3100)
-			name = "YELLOW";
-		if (countWhitePixels(image) < 2990)
-			name = "GREEN";
-		if (countWhitePixels(image) < 2500)
-			name = "PINK";
-		if (countWhitePixels(image) < 2380)
-			name = "BLUE";
-		if (countWhitePixels(image) < 2000)
-			name = "RED";
-		else
-			name="dssd";
-
-		return name;
-	}
+//	public static String getName(String path) { // this method returns the word that is displayed on the screen
+//		String name = null;
+//		Image image = new Image(path);
+//
+//		if (countWhitePixels(image) < 3600)
+//			name = "ORANGE";
+//		if (countWhitePixels(image) < 3100)
+//			name = "YELLOW";
+//		if (countWhitePixels(image) < 2990)
+//			name = "GREEN";
+//		if (countWhitePixels(image) < 2500)
+//			name = "PINK";
+//		if (countWhitePixels(image) < 2380)
+//			name = "BLUE";
+//		if (countWhitePixels(image) < 2000)
+//			name = "RED";
+//		else
+//			name="dssd";
+//
+//		return name;
+//	}
 
 	public static int countWhitePixels(Image image) {
 		int whitePixels = 0;
@@ -117,13 +117,13 @@ public class ImageProcessor {
 		return whitePixels;
 	}
 
-	public static void printOnCanvas(Image img) {
-		EasyGraphics canvas = new EasyGraphics(800, 800);
-		for (int i = START_IMAGE_WIDTH; i < END_IMAGE_WIDTH; i++) {
-			for (int j = START_IMAGE_HEIGHT; j < END_IMAGE_HEIGHT; j++) {
-				canvas.setColor(img.red(i, j), img.green(i, j), img.blue(i, j));
-				canvas.drawRectangle(i - START_IMAGE_WIDTH + 100, j - START_IMAGE_HEIGHT + 100, 1, 1);
-			}
-		}
-	}
+//	public static void printOnCanvas(Image img) {
+//		EasyGraphics canvas = new EasyGraphics(800, 800);
+//		for (int i = START_IMAGE_WIDTH; i < END_IMAGE_WIDTH; i++) {
+//			for (int j = START_IMAGE_HEIGHT; j < END_IMAGE_HEIGHT; j++) {
+//				canvas.setColor(img.red(i, j), img.green(i, j), img.blue(i, j));
+//				canvas.drawRectangle(i - START_IMAGE_WIDTH + 100, j - START_IMAGE_HEIGHT + 100, 1, 1);
+//			}
+//		}
+//	}
 }

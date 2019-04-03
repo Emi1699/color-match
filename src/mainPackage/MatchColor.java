@@ -10,7 +10,7 @@ public class MatchColor {
 
 		while (true) {
 			Screenshot.screenshotTo(path);
-			DryImage.blackenize("shot", ImageProcessor.START_IMAGE_WIDTH, ImageProcessor.END_IMAGE_WIDTH,
+			WordExtractor.blackenize("shot", ImageProcessor.START_IMAGE_WIDTH, ImageProcessor.END_IMAGE_WIDTH,
 					ImageProcessor.START_IMAGE_HEIGHT, ImageProcessor.END_IMAGE_HEIGHT);
 
 			String name = ImageProcessor.getName("images/shot_black.jpg");

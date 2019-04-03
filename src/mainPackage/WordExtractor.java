@@ -5,7 +5,7 @@ import java.io.IOException;
 import java.awt.image.BufferedImage;
 import javax.imageio.ImageIO;
 
-public class DryImage {
+public class WordExtractor {
 	public static void main(String[] args) throws IOException {
 		String [] colours = {"red", "blue", "green", "yellow", "pink", "orange"};
 		for (int i = 0; i < colours.length; i++) {
@@ -14,6 +14,10 @@ public class DryImage {
 		}
 	}
 
+	/*
+	 * this method basically converts every pixels in the image
+	 * that is lower than a certain given threshhold to black
+	 */
 	public static void blackenize(String color, int sw, int ew, int sh, int eh) {
 		BufferedImage img = null;
 		File f = null;
